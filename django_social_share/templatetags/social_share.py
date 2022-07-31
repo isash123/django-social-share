@@ -92,7 +92,8 @@ def post_to_twitter(context, text, obj_or_url=None, link_text='',link_class=""):
     tweet = _compose_tweet(text, url)
 
     context['link_class'] = link_class 
-    context['link_text'] = link_text or 'Post to Twitter'
+#     context['link_text'] = link_text or 'Post to Twitter'
+    context['link_text'] = link_text or ''
     context['full_text'] = tweet
     return context
 
@@ -109,7 +110,8 @@ def post_to_facebook_url(context, obj_or_url=None):
 def post_to_facebook(context, obj_or_url=None, link_text='',link_class=''):
     context = post_to_facebook_url(context, obj_or_url)
     context['link_class'] = link_class  or ''
-    context['link_text'] = link_text or 'Post to Facebook'
+#     context['link_text'] = link_text or 'Post to Facebook'
+    context['link_text'] = link_text or ''
     return context
 
 
@@ -125,7 +127,8 @@ def post_to_gplus_url(context, obj_or_url=None):
 def post_to_gplus(context, obj_or_url=None, link_text='',link_class=''):
     context = post_to_gplus_url(context, obj_or_url)
     context['link_class'] = link_class 
-    context['link_text'] = link_text or 'Post to Google+'
+#     context['link_text'] = link_text or 'Post to Google+'
+    context['link_text'] = link_text or ''
     return context
 
 
@@ -144,7 +147,8 @@ def send_email_url(context, subject, text, obj_or_url=None):
 def send_email(context, subject, text, obj_or_url=None, link_text='',link_class=''):
     context = send_email_url(context, subject, text, obj_or_url)
     context['link_class'] = link_class 
-    context['link_text'] = link_text or 'Share via email'
+#     context['link_text'] = link_text or 'Share via email'
+    context['link_text'] = link_text or ''
     return context
 
 
@@ -185,7 +189,8 @@ def post_to_reddit_url(context, title, obj_or_url=None):
 def post_to_reddit(context, title, obj_or_url=None, link_text='',link_class=''):
     context = post_to_reddit_url(context, title, obj_or_url)
     context['link_class'] = link_class 
-    context['link_text'] = link_text or 'Post to Reddit' 
+#     context['link_text'] = link_text or 'Post to Reddit' 
+    context['link_text'] = link_text or '' 
     return context
 
 
@@ -202,7 +207,8 @@ def post_to_telegram_url(context, title, obj_or_url):
 def post_to_telegram(context, title, obj_or_url=None, link_text='',link_class=''):
     context = post_to_telegram_url(context, title, obj_or_url)
     context['link_class'] = link_class 
-    context['link_text'] = link_text or 'Post to Telegram'
+#     context['link_text'] = link_text or 'Post to Telegram'
+    context['link_text'] = link_text or ''
     return context
 
 
@@ -218,7 +224,8 @@ def post_to_whatsapp_url(context, obj_or_url=None):
 def post_to_whatsapp(context, obj_or_url=None, link_text='',link_class=''):
     context = post_to_whatsapp_url(context, obj_or_url)
     context['link_class'] = link_class 
-    context['link_text'] = link_text or 'Post to WhatsApp'
+#     context['link_text'] = link_text or 'Post to WhatsApp'
+    context['link_text'] = link_text or ''
     return context
 
 
@@ -254,7 +261,8 @@ def copy_to_clipboard(context, obj_or_url, link_text='', link_class=''):
     context = copy_to_clipboard_url(context, obj_or_url)
     
     context['link_class'] = link_class
-    context['link_text'] = link_text or 'Copy to clipboard'
+#     context['link_text'] = link_text or 'Copy to clipboard'
+    context['link_text'] = link_text or ''
     return context
 
 @register.inclusion_tag('django_social_share/templatetags/copy_script.html', takes_context=False)
